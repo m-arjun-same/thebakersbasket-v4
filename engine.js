@@ -65,7 +65,7 @@
    window.open('https://wa.me/923215375875?text='+encodeURIComponent('Assalam-o-Alaikum The Baker\'s Basket! I want to order:\n'+lines),'_blank'); };
  // Buy Now buttons feed the cart, like Dialed
  document.querySelectorAll('a.btn').forEach(a=>{ if(/Buy Now/i.test(a.textContent)){
-   a.addEventListener('click',e=>{ const card=a.closest('.card,.buy-card,.shopcard');
+   a.addEventListener('click',e=>{ e.preventDefault(); const card=a.closest('.card,.buy-card,.shopcard');
      const name=card? (card.querySelector('h3,b')||{}).textContent : 'Custom Celebration Cake';
      if(name){ window.addToCart(name.trim()); } }); }});
 })();
