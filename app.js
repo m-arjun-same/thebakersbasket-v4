@@ -17,7 +17,7 @@ function setFlavour(k,btn){ const d=FLAV[k]; if(!d) return; if(window.resetAuto)
  document.querySelectorAll('.thumbs button').forEach(b=>b.classList.remove('on')); if(btn) btn.classList.add('on');
  const sel=document.getElementById('prod'); if(sel) sel.value=d.name; }
 let qi=0,qTimer=null;
-function setQuote(n,btn){ qi=n; document.querySelectorAll('.tq').forEach((q,x)=>q.classList.toggle('on',x===n));
+function setQuote(n,btn){ qi=n; const t=document.querySelector('.testi2'); if(t) t.classList.add('manual'); document.querySelectorAll('.tq').forEach((q,x)=>q.classList.toggle('on',x===n));
  document.querySelectorAll('.tnav button').forEach((b,x)=>b.classList.toggle('on',x===n)); }
 
 function scrollTrack(id,dir){document.getElementById(id).scrollBy({left:dir*340,behavior:'smooth'})}
