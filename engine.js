@@ -69,3 +69,6 @@
      const name=card? (card.querySelector('h3,b')||{}).textContent : 'Custom Celebration Cake';
      if(name){ window.addToCart(name.trim()); } }); }});
 })();
+
+// testimonial rotation (Dialed: quotes auto-rotate)
+let _qi=0; setInterval(()=>{ if(document.querySelector('.tq') && window.setQuote) setQuote((_qi=( _qi+1)%3)); },5000);

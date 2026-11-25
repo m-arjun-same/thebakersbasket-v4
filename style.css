@@ -143,7 +143,7 @@ footer .giant{font-size:clamp(80px,18.5vw,290px);line-height:.78;text-align:cent
 .hero h1,.slide h2{overflow:hidden}
 html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}
 /* v4 exact-reference pass */
-nav{position:fixed;top:0;left:0;right:0;z-index:120;mix-blend-mode:difference;color:#fcfcfc}
+nav{position:fixed;top:0;left:0;right:0;z-index:130;mix-blend-mode:difference;color:#fcfcfc}
 nav a{color:#fcfcfc!important}
 body{padding-top:0}
 .hero{background:#fcfcfc;color:#281b13;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:110px 20px 0;overflow:hidden;position:relative;text-align:center}

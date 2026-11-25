@@ -19,7 +19,7 @@ function setFlavour(k,btn){ const d=FLAV[k]; if(!d) return; if(window.resetAuto)
 let qi=0,qTimer=null;
 function setQuote(n,btn){ qi=n; document.querySelectorAll('.tq').forEach((q,x)=>q.classList.toggle('on',x===n));
  document.querySelectorAll('.tnav button').forEach((b,x)=>b.classList.toggle('on',x===n)); }
-qTimer=setInterval(()=>{ if(document.querySelector('.tq')) setQuote((qi+1)%3); },5000);
+
 function scrollTrack(id,dir){document.getElementById(id).scrollBy({left:dir*340,behavior:'smooth'})}
 function closePopup(){document.getElementById('popup').style.display='none'}
 function joinList(e){e.preventDefault();e.target.innerHTML='<b>Dialed in. You are on the list!</b>';return false}
