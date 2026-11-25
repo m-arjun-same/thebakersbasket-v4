@@ -2,26 +2,40 @@
 <title>The Baker's Basket | Custom Cakes, Bento Cakes & Cupcakes — Lahore</title>
 <meta name="description" content="A mother and dentist duo in Lahore sending a slice of love from our kitchen to you. Custom celebration cakes, bento cakes, cupcakes and gift boxes. Pickup or delivery via Uber car. No COD.">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=3"></head><body>
+<link rel="stylesheet" href="style.css?v=4"></head><body>
 <nav><div class="l"><a href="shop.html">Shop</a><a href="shop.html#bundles">Bundles</a><a href="#faq">FAQ</a></div>
 <a class="brand" href="index.html">The Baker's <i>Basket</i></a>
-<div class="r"><a href="#order">Order</a><a href="shop.html">Cart ( 0 )</a></div></nav>
+<div class="r"><a href="#order">Order</a><a href="#" onclick="toggleCart(true);return false">Cart ( <span id="navCart">0</span> )</a></div></nav>
 
-<header class="hero on-dark" id="hero" style="background:#c10017">
+<header class="hero" id="hero">
  <h1 class="ttl">Baked fresh.<br><span class="serif">Sent with love.</span></h1>
- <div class="selector">
-  <button class="on" onclick="setHero('cake',this)">Custom Celebration Cake</button>
-  <button onclick="setHero('bento',this)">Bento Cake</button>
-  <button onclick="setHero('cup',this)">Cupcakes</button>
- </div>
- <img id="heroImg" class="hero-prod" src="assets/cake.webp" alt="Custom celebration cake">
+ <img class="hero-img" src="assets/cake.webp" alt="Custom celebration cake">
  <div class="scrolldown">Scroll down</div>
- <div class="buy-card"><div><b id="buyName">Custom Celebration Cake</b><small><span id="buyMeta">Made to order</span> · <span id="buyPrice">Price on enquiry</span></small></div><a class="btn primary" href="#order">Buy Now</a></div>
 </header>
 
 <div class="popup" id="popup"><button class="x" onclick="closePopup()" aria-label="Close">✕</button>
  <h3>Join the Basket and be first to hear about Eid & Mother's Day boxes</h3><p>One sweet email when a seasonal box opens. No spam.</p>
  <form onsubmit="return joinList(event)"><input type="email" required placeholder="YOUR EMAIL ADDRESS"><button class="btn" type="submit">Submit</button></form></div>
+
+<section class="panel" id="panel" style="background:#c10017">
+ <div class="panel-in">
+  <p class="panel-kicker">Pick your bake</p>
+  <h2 class="ttl" id="flavName">Custom Celebration Cake</h2>
+  <div class="specs">
+   <div><b id="spec1">Made to order</b><span>Baked for your date</span></div>
+   <div><b id="spec2">Customised</b><span>Your colours & message</span></div>
+   <div><b id="spec3">Lahore</b><span>Pickup / Uber car</span></div>
+   <div><b id="spec4">No COD</b><span>Confirmed on enquiry</span></div>
+  </div>
+  <div class="thumbs">
+   <button class="on" onclick="setFlavour('cake',this)"><img src="assets/cake.webp" alt="Custom celebration cake"><span>Custom Cake</span></button>
+   <button onclick="setFlavour('bento',this)"><img src="assets/bento.webp" alt="Bento cake"><span>Bento Cake</span></button>
+   <button onclick="setFlavour('cup',this)"><img src="assets/cupcakes.webp" alt="Cupcakes"><span>Cupcakes</span></button>
+  </div>
+ </div>
+ <img id="flavImg" class="panel-img" src="assets/cake.webp" alt="">
+ <div class="buy-card"><div><b id="buyName">Custom Celebration Cake</b><small><span id="buyMeta">Made to order</span> · <span id="buyPrice">Price on enquiry</span></small></div><a class="btn primary" href="#order">Buy Now</a></div>
+</section>
 
 <section class="products">
  <div class="head"><h2 class="ttl">4 Products</h2><p class="sub">Fresh bakes made to order in Lahore. Your celebration, fully Basketed.</p></div>
@@ -34,27 +48,28 @@
  <div class="navbtns"><button onclick="scrollTrack('track1',-1)">Prev</button><button onclick="scrollTrack('track1',1)">Next</button></div>
 </section>
 
-<section class="dark"><img class="bgimg" src="assets/kitchen.webp" alt="">
- <div class="in"><h2 class="ttl">From our kitchen. <span class="serif">Real love.</span></h2>
- <div class="grid4">
-  <div class="it"><h3>Made to order</h3><p>Every cake is baked for your order in our home kitchen in Lahore — never off a shelf.</p></div>
-  <div class="it"><h3>Mother & dentist duo</h3><p>Two bakers, one kitchen, sending a slice of love from our kitchen to you.</p></div>
-  <div class="it"><h3>Customised</h3><p>Princess birthdays, baby showers, graduations — tell us the occasion, we design the cake.</p></div>
-  <div class="it"><h3>Pickup / Uber car</h3><p>Pick up in Lahore, or get it delivered via Uber car. No COD available.</p></div>
- </div></div>
-</section>
 
-<section class="testi">
- <h2>Good f*cking cake</h2><div class="they">They can confirm.</div>
- <div class="trow">
-  <article><span class="num">01</span><blockquote>“Birthday cake for a princess”</blockquote><p class="who">From our posts</p><p class="role">Custom celebration cake, Lahore</p></article>
-  <article><span class="num">02</span><blockquote>“Cupcake basket for a cute baby girl”</blockquote><p class="who">From our posts</p><p class="role">Cupcake basket, Lahore</p></article>
-  <article><span class="num">03</span><blockquote>“Yummy bento cakes at reasonable prices!”</blockquote><p class="who">From our posts</p><p class="role">Bento cake, Lahore</p></article>
+<section class="ingr">
+ <div class="ingr-list">
+  <h2 class="ttl">From our kitchen. <span class="serif">Real love.</span></h2>
+  <div class="irow"><b>Made to order</b><p>Every cake is baked for your order in our home kitchen in Lahore — never off a shelf.</p></div>
+  <div class="irow"><b>Mother & dentist duo</b><p>Two bakers, one kitchen, sending a slice of love from our kitchen to you.</p></div>
+  <div class="irow"><b>Customised</b><p>Princess birthdays, baby showers, graduations — tell us the occasion, we design the cake.</p></div>
+  <div class="irow"><b>Pickup / Uber car</b><p>Pick up in Lahore, or get it delivered via Uber car. No COD available.</p></div>
  </div>
+ <div class="ingr-img"><img src="assets/kitchen.webp" alt="Baking in our kitchen"></div>
 </section>
 
-<section class="faq" id="faq"><h2 class="ttl">Some Answers</h2><p class="touch"><a href="#order">Get in touch</a></p>
- <details open><summary>How do I contact The Baker's Basket?</summary><p>DM us on Instagram @thebakersbasket, call or WhatsApp +92 321 5375875, or email abeera.wajid71@gmail.com.</p></details>
+<section class="testi2">
+ <div class="tq on"><span class="num">01</span><blockquote>“Birthday cake for a princess”</blockquote><p>From our posts — Custom celebration cake, Lahore</p></div>
+ <div class="tq"><span class="num">02</span><blockquote>“Cupcake basket for a cute baby girl”</blockquote><p>From our posts — Cupcake basket, Lahore</p></div>
+ <div class="tq"><span class="num">03</span><blockquote>“Yummy bento cakes at reasonable prices!”</blockquote><p>From our posts — Bento cake, Lahore</p></div>
+ <div class="tnav"><button class="on" onclick="setQuote(0,this)">01</button><button onclick="setQuote(1,this)">02</button><button onclick="setQuote(2,this)">03</button></div>
+ <h2 class="tcap">Good f*cking cake — <span class="serif">they can confirm.</span></h2>
+</section>
+
+<section class="faq" id="faq"><h2 class="ttl faq-big">Some Answers</h2><p class="touch"><a href="#order">Get in touch</a></p>
+ <details><summary>How do I contact The Baker's Basket?</summary><p>DM us on Instagram @thebakersbasket, call or WhatsApp +92 321 5375875, or email abeera.wajid71@gmail.com.</p></details>
  <details><summary>Can I order a large quantity for an event?</summary><p>Yes — tell us the date, the occasion and how many people, and we will confirm what we can bake for it on WhatsApp or email.</p></details>
  <details><summary>How does ordering work?</summary><p>Pick your cake, send the date and design on WhatsApp or DM, and we confirm your exact price on enquiry. Pickup in Lahore or delivery via Uber car. No COD available.</p></details>
  <details><summary>What is a bento cake?</summary><p>A small, personal lunchbox cake, customised with your colours and message — one of the most-ordered bakes from our posts.</p></details>
@@ -74,9 +89,10 @@
  </form>
 </section>
 
+
 <footer><div class="cols"><div class="star">✳</div>
  <div><h4>Shop</h4><ul><li><a href="shop.html">All products</a></li><li><a href="shop.html#bundles">Bundles</a></li></ul></div>
  <div><h4>Company</h4><ul><li><a href="#faq">FAQ</a></li><li><a href="#order">Support / Order</a></li><li>Delivery & Returns — pickup / Uber car, no COD</li></ul></div>
  <div><h4>Stay in touch</h4><ul><li><a href="https://www.instagram.com/thebakersbasket" target="_blank" rel="noopener">Instagram</a></li><li><a href="http://www.facebook.com/T.B.Basket" target="_blank" rel="noopener">Facebook</a></li><li><a href="tel:+923215375875">+92 321 5375875</a></li></ul></div>
 </div><div class="copy">© 2026 The Baker's Basket. All rights reserved.</div><div class="giant">Basket</div></footer>
-<script src="app.js?v=3"></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script><script src="engine.js?v=3"></script></body></html>
+<script src="app.js?v=4"></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script><script src="engine.js?v=4"></script></body></html>

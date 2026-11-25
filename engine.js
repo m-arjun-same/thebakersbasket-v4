@@ -28,7 +28,7 @@
  function heroReveal(){
    if(!window.gsap) return;
    gsap.fromTo('.hero h1',{yPercent:6,opacity:0},{yPercent:0,opacity:1,duration:1.1,ease:'expo.out'});
-   gsap.fromTo('.hero-prod',{y:60,opacity:0,scale:.96},{y:'-50%',opacity:1,scale:1,duration:1.2,ease:'expo.out',delay:.15,clearProps:'scale'});
+   gsap.fromTo('.hero-img',{y:60,opacity:0,scale:.96},{y:'-50%',opacity:1,scale:1,duration:1.2,ease:'expo.out',delay:.15,clearProps:'scale'});
    gsap.fromTo('.buy-card,.selector,.scrolldown',{opacity:0,y:24},{opacity:1,y:0,duration:.9,ease:'expo.out',stagger:.08,delay:.3});
  }
  // --- GSAP ScrollTrigger section reveals + image parallax ---
@@ -43,8 +43,8 @@
  }
  // --- Hero autoplay slider (Dialed: autoplays, switches flavour + buy card) ---
  const keys=['cake','bento','cup']; let ki=0, timer=null;
- function auto(){ if(!document.getElementById('hero')) return;
-   timer=setInterval(()=>{ ki=(ki+1)%keys.length; const b=document.querySelectorAll('.selector button')[ki]; if(b) setHero(keys[ki],b); },4200); }
+ function auto(){ if(!document.getElementById('panel')) return;
+   timer=setInterval(()=>{ ki=(ki+1)%keys.length; const b=document.querySelectorAll('.thumbs button')[ki]; if(b) setFlavour(keys[ki],b); },4200); }
  setTimeout(auto,1600);
  window.resetAuto=function(){ if(timer){clearInterval(timer); auto();} };
 
@@ -55,7 +55,7 @@
  window.changeQty=function(name,d){ const f=window.cartItems.find(i=>i.name===name); if(!f) return;
    f.qty+=d; if(f.qty<1) window.cartItems=window.cartItems.filter(i=>i.name!==name); renderCart(); };
  window.renderCart=function(){ const box=document.getElementById('cartItems');
-   document.getElementById('cartCount').textContent=window.cartItems.reduce((a,i)=>a+i.qty,0);
+   document.getElementById('cartCount').textContent=window.cartItems.reduce((a,i)=>a+i.qty,0); const nc=document.getElementById('navCart'); if(nc) nc.textContent=window.cartItems.reduce((a,i)=>a+i.qty,0);
    box.innerHTML=window.cartItems.length? window.cartItems.map(i=>`<div class="cart-row"><div><b>${i.name}</b><small>Price on enquiry</small></div><div class="qty"><button onclick="changeQty('${i.name}',-1)">−</button>${i.qty}<button onclick="changeQty('${i.name}',1)">+</button></div></div>`).join('')
      : '<p class="cart-empty">Your basket is empty. Time to load up and get baked.</p>'; };
  window.toggleCart=function(open){ document.getElementById('cartDrawer').classList.toggle('open',open);
